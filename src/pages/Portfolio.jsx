@@ -14,21 +14,21 @@
     },
     {
         title: 'Pokemon Go Event Calendar',
-        image:'/PoGoEventCalendar.png',
+        image: '/PoGoEventCalendar.png',
         deployedLink: 'https://bearsanity.github.io/Pokemon-Go-Event-Calendar/',
         githubLink: 'https://github.com/bearsanity/Pokemon-Go-Event-Calendar',
     },
     {
-        title:,
-        image:,
-        deployedLink:,
-        githubLink:
+        title: 'Dev Link',
+        image: '/devlink.png',
+        deployedLink: '/MongoVideo.mp4',
+        githubLink: 'https://github.com/bearsanity/Week-17-mongo'
     },
     {
-        title:,
-        image:,
-        deployedLink:,
-        githubLink:
+        title: 'HTML Generator',
+        image:'/htmlgen/png',
+        deployedLink:'/readme.mp4',
+        githubLink: 'https://github.com/bearsanity/Week-9-Project---ReadMe-Generator'
     },
  ]
 

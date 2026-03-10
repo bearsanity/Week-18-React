@@ -1,17 +1,63 @@
- function Contact() {
+import { useState } from 'react';
+
+const validateEmail = (email) => {
+    return String(email)
+        .toLowerCase()
+        .match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)
+};
+
+
+function Contact() {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const [errorMessageName, setErrorMessageName] = useState('');
+    const [errorMessageEmail, setErrorMessageEmail] = useState('');
+    const [errorMessageMessage, setErrorMessageMessage] = useState('');
+
+    
+    function handleBlur(e) {
+        if (e.target.name === 'nameInput') {
+            if (e.target.value.trim().length === 0) {
+                setErrorMessageName("This field can't be empty.");
+            } else {
+                setErrorMessageName('');
+            }
+        }
+        if (e.target.name === 'messageInput') {
+            if (e.target.value.trim().length === 0) {
+                setErrorMessageMessage("This field can't be empty.");
+            } else {
+                setErrorMessageMessage('');
+            }
+        }
+        if (e.target.name === 'emailInput') {
+            if (e.target.value.trim().length === 0) {
+                setErrorMessageEmail("This field can't be empty.");
+            } else if (!validateEmail(e.target.value)){
+                setErrorMessageEmail('Not a valid email.');
+            } else {
+                setErrorMessageEmail('');
+            }
+        }
+    }
+
     return (
         <div>
             <label>
-                Name: <input name="nameInput" />
+                Name: <input name="nameInput" value={name} onChange={(e) => setName(e.target.value)} onBlur={handleBlur} />
+                {errorMessageName && <p>{errorMessageName}</p>}
             </label>
             <label>
-                Email: <input name="emailInput" />
+                Email: <input name="emailInput" value={email} onChange={(e) => setEmail(e.target.value)} onBlur={handleBlur}/>
+                {errorMessageEmail && <p>{errorMessageEmail}</p>}
             </label>
             <label>
-                Message: <textarea name="messageInput" />
+                Message: <textarea name="messageInput" value={message} onChange={(e) => setMessage(e.target.value)} onBlur={handleBlur}/>
+                {errorMessageMessage && <p>{errorMessageMessage}</p>}
             </label>
         </div>
     )
- }
+}
 
 export default Contact;

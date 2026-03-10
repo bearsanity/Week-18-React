@@ -1,12 +1,12 @@
 import Nav from "./Nav";
 
-function header() {
+function Header() {
     return (
         <header>
-            <h1>James Sweeney - Portfolio</h1>
+            <h1>James <span>Sweeney</span> - Portfolio</h1>
             <Nav />
         </header>
     );
 }
 
-export default header;
+export default Header;

@@ -44,19 +44,21 @@ function Contact() {
     }
 
     return (
-        <div>
-            <label>
+        <div className="contact-container">
+           <form onSubmit={(e) => e.preventDefault()}>
+           <label>
                 Name: <input name="nameInput" value={name} onChange={(e) => setName(e.target.value)} onBlur={handleBlur} />
-                {errorMessageName && <p>{errorMessageName}</p>}
+                {errorMessageName && <p className="error-message">{errorMessageName}</p>}
             </label>
             <label>
                 Email: <input name="emailInput" value={email} onChange={(e) => setEmail(e.target.value)} onBlur={handleBlur}/>
-                {errorMessageEmail && <p>{errorMessageEmail}</p>}
+                {errorMessageEmail && <p className="error-message">{errorMessageEmail}</p>}
             </label>
             <label>
                 Message: <textarea name="messageInput" value={message} onChange={(e) => setMessage(e.target.value)} onBlur={handleBlur}/>
-                {errorMessageMessage && <p>{errorMessageMessage}</p>}
+                {errorMessageMessage && <p className="error-message">{errorMessageMessage}</p>}
             </label>
+            </form>
         </div>
     )
 }

@@ -1,7 +1,7 @@
- import ProjectCard from '../components/ProjectCard.jsx'
+import ProjectCard from '../components/ProjectCard.jsx'
 
 
- const projects = [
+const projects = [
     {
         title: 'Pokemon Go Trading Hub',
         image: '/PoGoTradingHub.png',
@@ -11,7 +11,7 @@
     {
         title: 'Weather Dashboard',
         image: '/WeatherDashboard.png',
-        deployedLink:'https://bearsanity.github.io/Weather-App/',
+        deployedLink: 'https://bearsanity.github.io/Weather-App/',
         githubLink: 'https://github.com/bearsanity/Weather-App',
     },
     {
@@ -28,25 +28,28 @@
     },
     {
         title: 'HTML Generator',
-        image:'/htmlgen.png',
-        deployedLink:'/readme.mp4',
+        image: '/htmlgen.png',
+        deployedLink: '/readme.mp4',
         githubLink: 'https://github.com/bearsanity/Week-9-Project---ReadMe-Generator'
     },
- ]
+]
 
- function Portfolio() {
-  return (
-    <div>
-        {projects.map(project => (
-            <ProjectCard 
-                title={project.title}
-                image={project.image}
-                deployedLink={project.deployedLink}
-                githubLink={project.githubLink} 
-                key={project.title}
-            />
-        ))}
-    </div>)
- }
+function Portfolio() {
+    return (
+        <div className="portfolio-container">
+            <h2>My Projects</h2>
+            <div className="portfolio-grid">
+                {projects.map(project => (
+                    <ProjectCard
+                        title={project.title}
+                        image={project.image}
+                        deployedLink={project.deployedLink}
+                        githubLink={project.githubLink}
+                        key={project.title}
+                    />
+                ))}
+            </div>
+        </div>)
+}
 
 export default Portfolio;

@@ -1,12 +1,13 @@
 import { useState } from 'react';
 
+// standard regex email validation
 const validateEmail = (email) => {
     return String(email)
         .toLowerCase()
         .match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)
 };
 
-
+// need a seperate hook for each one so they don't override each other
 function Contact() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -15,7 +16,7 @@ function Contact() {
     const [errorMessageEmail, setErrorMessageEmail] = useState('');
     const [errorMessageMessage, setErrorMessageMessage] = useState('');
 
-    
+// errors for when user clicks out of input box with invalid entry  
     function handleBlur(e) {
         if (e.target.name === 'nameInput') {
             if (e.target.value.trim().length === 0) {

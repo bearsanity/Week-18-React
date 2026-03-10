@@ -226,7 +226,7 @@ main {
 
 .project-card h2 {
   font-size: 1.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   color: var(--color-cream);
 }
 
@@ -244,6 +244,7 @@ main {
   letter-spacing: 1px;
   border-radius: var(--radius);
   transition: all var(--transition);
+  margin-top: 1.25rem;
 }
 
 .project-card-links a:first-child {
